@@ -13,15 +13,16 @@ public class paddle_2 : MonoBehaviour {
 	void Update ()
     {
 
-        float mousePosInUnits = (Input.mousePosition.y / Screen.width * 16) - 8;
+        float mousePosInUnits = (Input.mousePosition.y / Screen.width * 16) - 8;  //getting the position of the paddle 
+                                                                                   // so it can move with the mouse
 
-        Vector3 newPaddlePos = new Vector3(gameObject.transform.position.x, mousePosInUnits,
-                                            gameObject.transform.position.z);
+        Vector3 newPaddlePos = new Vector3(gameObject.transform.position.x, mousePosInUnits,  
+                                            gameObject.transform.position.z);  
 
         // we needed to create a new variable for the new paddle position since we cannot change
         // one coordinate (e.g. x coordinate) on its own
 
-        newPaddlePos.y = Mathf.Clamp(mousePosInUnits, -1.67f, 1.67f);
+        newPaddlePos.y = Mathf.Clamp(mousePosInUnits, -1.67f, 1.67f);  //the speed of the paddle
 
         gameObject.transform.position = newPaddlePos;
     }

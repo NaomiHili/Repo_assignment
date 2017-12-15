@@ -17,11 +17,11 @@ public class Level_manager : MonoBehaviour {
     
     public void startLevel()
     {
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level_01"); //when start is clicked move to level 1
     }
 
     public void quitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false; //when quit is clicked the game quits
     }
 }
