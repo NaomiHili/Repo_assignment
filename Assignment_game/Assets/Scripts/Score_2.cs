@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -21,15 +22,39 @@ public class Score_2 : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        scored2 += 1; //when it collides with the goal post score +1
+        if (global_score.Clevel == 1)
+        {
+            scored2 += 1;
+            global_score.p2Score += 1;
+        }
+        if (global_score.Clevel == 1 && global_score.p2Score == 2)
+        {
+            SceneManager.LoadScene(sceneName: "Level_02");
+            scored2 = 0;
+            global_score.Clevel += 1;
+        }
+   
 
-        //void DestroyGameObject()
-        //{
-        //    Destroy(ball);
-        //}
-        //GetComponent<ball>();
-        //transform.position = new Vector3(0, 0, 0);
+        if (global_score.Clevel == 2)
+        {
+            scored2 += 2;
+            global_score.p2Score += 2;
+        }
+        if (global_score.Clevel == 2 && global_score.p2Score == 6)
+        {
+            SceneManager.LoadScene(sceneName: "Level_03");
+            scored2 = 0;
+            global_score.Clevel += 2;
+        }
 
+
+
+        if (global_score.Clevel == 3 && global_score.p2Score == 12)
+        {
+            SceneManager.LoadScene(sceneName: "End_scene");
+            scored2 = 0;
+            global_score.Clevel += 4;
+        }
     }
 
 }

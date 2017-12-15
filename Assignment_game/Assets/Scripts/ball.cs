@@ -16,16 +16,15 @@ public class ball : MonoBehaviour {
         paddle = GameObject.FindObjectOfType< Paddle_1>();
 
         ballPaddleDiff = this.transform.position - paddle.transform.position; 
-
  
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!gameStarted) // if(gameStarted == false)
+        if (!gameStarted)
         {
-            this.transform.position = new Vector3(0, 0, -9);
+            this.transform.position = new Vector3(0, 0, -9); //ball reset
         }
 
         if (Input.GetMouseButtonDown(0) && !gameStarted)   //start on mouse click
@@ -41,6 +40,8 @@ public class ball : MonoBehaviour {
         }
 
     }
+
+    //ball reset
     private void OnCollisionEnter2D(Collision2D c)
     {
         if (c.gameObject.name == "post1")
