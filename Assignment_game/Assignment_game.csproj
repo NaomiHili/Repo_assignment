@@ -88,7 +88,8 @@
     <Compile Include="Assets\Scripts\Score_2.cs" />
     <Compile Include="Assets\Scripts\ball.cs" />
     <Compile Include="Assets\Scripts\global_score.cs" />
-    <Compile Include="Assets\Scripts\object_move.cs" />
+    <Compile Include="Assets\Scripts\move_down.cs" />
+    <Compile Include="Assets\Scripts\move_up.cs" />
     <Compile Include="Assets\Scripts\paddle_2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
